@@ -7,7 +7,7 @@ export type Report = {
   period: string;
   status: "draft" | "ready";
 };
-export const initialReports: Report[] = [
+export const initialReports: [Report, ...Report[]] = [
   {
     id: "taskas-09",
     client: "Táskás",
@@ -25,9 +25,9 @@ export const initialReports: Report[] = [
     status: "ready",
   },
   {
-    id: "otthon-q3",
-    client: "Otthon & Kert",
-    domain: "otthonkert.example",
+    id: "taskas-q3",
+    client: "Táskás",
+    domain: "taskas.hu",
     type: "quarterly",
     period: "2026. III. negyedév",
     status: "draft",

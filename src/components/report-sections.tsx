@@ -96,7 +96,7 @@ export function ReportMetrics({ report }: { report: Report }) {
           <div className="metric-value">{m.value}</div>
           <Sparkline variant={i} />
           <div className="metric-bottom">
-            <Change value={m.change} suffix={m.suffix} />
+            <Change value={m.change} suffix={m.suffix ?? "%"} />
             <span>az előző időszakhoz képest</span>
           </div>
         </div>
@@ -287,7 +287,7 @@ export function KeywordsSection({ report }: { report: Report }) {
     report.type === "quarterly" ? 3 : report.period.includes("augusztus") ? 0.8 : 1;
   const rows = keywords
     .filter((k) => k.keyword.includes(search.toLowerCase()))
-    .toSorted((a, b) => (sort ? b.before - b.after - (a.before - a.after) : 0));
+    .sort((a, b) => (sort ? b.before - b.after - (a.before - a.after) : 0));
   return (
     <>
       <div className="section-heading">

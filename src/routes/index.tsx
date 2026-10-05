@@ -98,7 +98,7 @@ function defaultSummary(report: Report) {
 function Index() {
   const [reports, setReports] = useState<Report[]>(initialReports);
   const [selectedId, setSelectedId] = useState(initialReports[0].id);
-  const report = reports.find((r) => r.id === selectedId) ?? reports[0];
+  const report = reports.find((r) => r.id === selectedId) ?? initialReports[0];
   const [view, setView] = useState<WorkspaceView>("report");
   const [tab, setTab] = useState<ReportTab>("overview");
   const [clientMode, setClientMode] = useState(false);
