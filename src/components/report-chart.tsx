@@ -98,6 +98,7 @@ export function ReportChart({ type, earlier }: { type: ReportType; earlier: bool
               }
             />
             <Line
+              isAnimationActive={false}
               type="monotone"
               dataKey="previous"
               stroke="var(--chart-previous)"
@@ -107,6 +108,7 @@ export function ReportChart({ type, earlier }: { type: ReportType; earlier: bool
               activeDot={{ r: 4 }}
             />
             <Area
+              isAnimationActive={false}
               type="monotone"
               dataKey="current"
               stroke="var(--brand-blue)"
